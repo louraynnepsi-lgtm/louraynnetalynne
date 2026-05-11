@@ -3,9 +3,11 @@ export const SITE = {
   role: "Neuropsicóloga e Psicóloga Clínica",
   crp: "CRP 09/013939",
   city: "Goiânia/GO",
-  whatsappNumber: "5562000000000", // placeholder
+  whatsappNumber: "5562994235292",
+  whatsappDisplay: "+55 62 99423-5292",
   whatsappText: "Olá, Louraynne! Gostaria de agendar uma avaliação.",
-  instagram: "https://instagram.com/",
+  instagramHandle: "@psi.louraynnetaylynne",
+  instagram: "https://instagram.com/psi.louraynnetaylynne",
 };
 
 export const whatsappLink = (text = SITE.whatsappText) =>

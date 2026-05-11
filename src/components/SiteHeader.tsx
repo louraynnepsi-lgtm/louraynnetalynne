@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { SITE, whatsappLink } from "@/lib/site";
+import logoFull from "@/assets/logo-full.png";
 
 const nav = [
   { href: "#sobre", label: "Sobre" },
@@ -15,14 +16,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="container-editorial flex h-16 items-center justify-between md:h-20">
-        <a href="#top" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-primary text-primary-foreground font-display text-lg">L</span>
-          <span className="hidden sm:block font-display text-lg leading-tight text-primary">
-            {SITE.name}
-            <span className="block text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-sans">
-              {SITE.crp}
-            </span>
-          </span>
+        <a href="#top" className="flex items-center" onClick={() => setOpen(false)} aria-label={SITE.name}>
+          <img src={logoFull} alt={`${SITE.name} — ${SITE.role}`} className="h-10 md:h-12 w-auto" />
         </a>
 
         <nav className="hidden md:flex items-center gap-7">

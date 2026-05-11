@@ -1,14 +1,14 @@
 import { Instagram, MapPin, MessageCircle } from "lucide-react";
 import { SITE, whatsappLink } from "@/lib/site";
+import logoFull from "@/assets/logo-full.png";
 
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-border/60 bg-secondary/60">
       <div className="container-editorial grid gap-10 py-14 md:grid-cols-3">
         <div>
-          <a href="#top" className="flex items-center gap-2">
-            <span className="grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground font-display text-lg">L</span>
-            <span className="font-display text-xl text-primary">{SITE.name}</span>
+          <a href="#top" className="inline-flex items-center" aria-label={SITE.name}>
+            <img src={logoFull} alt={SITE.name} className="h-12 w-auto" />
           </a>
           <p className="mt-4 text-sm text-muted-foreground max-w-xs">
             {SITE.role}. Atendimento humanizado, ético e baseado em ciência.
@@ -33,9 +33,10 @@ export function SiteFooter() {
             <li className="flex items-center gap-2"><MapPin size={16} className="text-accent" /> {SITE.city}</li>
             <li>
               <a href={SITE.instagram} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-primary">
-                <Instagram size={16} className="text-accent" /> Instagram
+                <Instagram size={16} className="text-accent" /> {SITE.instagramHandle}
               </a>
             </li>
+            <li className="flex items-center gap-2"><MessageCircle size={16} className="text-accent" /> {SITE.whatsappDisplay}</li>
             <li>
               <a href={whatsappLink()} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-white text-sm font-medium shadow-sm hover:opacity-95">
                 <MessageCircle size={16} /> WhatsApp

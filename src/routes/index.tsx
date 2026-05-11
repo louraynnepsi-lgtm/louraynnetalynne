@@ -2,7 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { whatsappLink, SITE } from "@/lib/site";
 import { areas } from "@/lib/areas";
-import { ArrowRight, Calendar, GraduationCap, MapPin, MessageCircle, ShieldCheck, Sparkles, User, Video } from "lucide-react";
+import {
+  ArrowRight,
+  Calendar,
+  GraduationCap,
+  MapPin,
+  MessageCircle,
+  ShieldCheck,
+  Sparkles,
+  User,
+  Video,
+} from "lucide-react";
 import { useState } from "react";
 import heroImg from "@/assets/louraynne-hero.jpg";
 import aboutImg from "@/assets/louraynne-about.jpg";
@@ -11,9 +21,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Louraynne Talynne — Neuropsicóloga em Goiânia | Avaliação Neuropsicológica" },
-      { name: "description", content: "Neuropsicóloga e psicóloga clínica em Goiânia. Avaliação neuropsicológica, laudo, reabilitação e psicoterapia (TCC) para crianças, adolescentes, adultos e idosos." },
+      {
+        name: "description",
+        content:
+          "Neuropsicóloga e psicóloga clínica em Goiânia. Avaliação neuropsicológica, laudo, reabilitação e psicoterapia (TCC) para crianças, adolescentes, adultos e idosos.",
+      },
       { property: "og:title", content: "Louraynne Talynne — Neuropsicóloga em Goiânia" },
-      { property: "og:description", content: "Avaliação, diagnóstico e reabilitação neuropsicológica com acolhimento e embasamento científico." },
+      {
+        property: "og:description",
+        content: "Avaliação, diagnóstico e reabilitação neuropsicológica com acolhimento e embasamento científico.",
+      },
       { property: "og:image", content: heroImg },
       { property: "og:type", content: "website" },
     ],
@@ -23,7 +40,7 @@ export const Route = createFileRoute("/")({
 
 function Badge({ icon: Icon, children }: { icon: React.ElementType; children: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-2 rounded-full border border-border bg-background/70 px-3 py-1.5 text-xs text-foreground/80 backdrop-blur">
+    <div className="flex items-center gap-2 rounded-full bg-secondary px-3.5 py-1.5 text-xs text-foreground/80">
       <Icon size={14} className="text-accent" /> {children}
     </div>
   );
@@ -38,10 +55,10 @@ const steps = [
 ];
 
 const capacitacoes = [
-  { title: "Graduação em Psicologia", desc: "Formação acadêmica em Psicologia." },
-  { title: "Especialização em Neuropsicologia", desc: "Aprofundamento em avaliação e reabilitação neuropsicológica." },
-  { title: "Capacitação em Terapia Cognitivo-Comportamental", desc: "Abordagem clínica baseada em evidências." },
-  { title: "Cursos complementares", desc: "Atualização contínua em TDAH, TEA, transtornos de aprendizagem e altas habilidades." },
+  { title: "Graduação em Psicologia", inst: "[Instituição]", year: "[Ano]", desc: "Formação acadêmica em Psicologia." },
+  { title: "Especialização em Neuropsicologia", inst: "[Instituição]", year: "[Ano]", desc: "Aprofundamento em avaliação e reabilitação neuropsicológica." },
+  { title: "Capacitação em Terapia Cognitivo-Comportamental", inst: "[Instituição]", year: "[Ano]", desc: "Abordagem clínica baseada em evidências." },
+  { title: "Cursos complementares", inst: "[Instituições]", year: "[Anos]", desc: "Atualização contínua em TDAH, TEA, transtornos de aprendizagem e altas habilidades." },
 ];
 
 function Home() {
@@ -57,57 +74,86 @@ function Home() {
     <Layout>
       <span id="top" />
 
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-secondary/70 via-background to-background" />
-        <div className="container-editorial grid gap-12 py-16 md:grid-cols-2 md:items-center md:py-24 lg:py-28">
-          <div className="animate-fade-up">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background px-3 py-1 text-xs uppercase tracking-[0.2em] text-primary">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" /> {SITE.crp}
-            </p>
-            <h1 className="font-display text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-6xl">
-              Neuropsicóloga e <em className="not-italic text-accent">Psicóloga</em> Clínica
-            </h1>
-            <p className="mt-5 text-lg text-foreground/80 max-w-xl">
-              Avaliação, diagnóstico e reabilitação neuropsicológica com acolhimento e embasamento científico.
-            </p>
-            <p className="mt-4 text-sm text-muted-foreground max-w-xl">
-              Atendimento individualizado para crianças, adolescentes, adultos e idosos, com investigação clínica completa e direcionamento terapêutico baseado em ciência.
-            </p>
+      {/* HERO — two-column split */}
+      <section className="relative">
+        <div className="grid md:grid-cols-2">
+          {/* LEFT */}
+          <div className="bg-background">
+            <div className="mx-auto max-w-xl px-5 py-14 md:px-10 md:py-20 lg:py-28 animate-fade-up">
+              <span className="inline-flex items-center gap-2 rounded-full border border-accent bg-secondary px-3.5 py-1.5 text-[11px] uppercase tracking-[0.2em] text-primary">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" /> {SITE.crp}
+              </span>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href={whatsappLink()}
-                target="_blank"
-                rel="noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium shadow-lg shadow-emerald-900/10 transition-transform hover:scale-[1.02]"
-              >
-                <MessageCircle size={18} /> Agendar pelo WhatsApp
-                <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
-              </a>
-              <a href="#sobre" className="text-sm font-medium text-primary underline-offset-4 hover:underline">
-                Conheça meu trabalho
-              </a>
-            </div>
+              <p className="mt-6 text-xs uppercase tracking-[0.22em] text-accent">
+                Neuropsicologia clínica
+              </p>
 
-            <div className="mt-8 flex flex-wrap gap-2">
-              <Badge icon={ShieldCheck}>7 anos de experiência</Badge>
-              <Badge icon={Video}>Presencial e online</Badge>
-              <Badge icon={Sparkles}>Avaliação e reabilitação</Badge>
+              <h1 className="mt-3 font-display text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-6xl">
+                Neuropsicóloga e <em className="not-italic text-accent">Psicóloga</em> Clínica
+              </h1>
+
+              <p className="mt-6 text-lg text-foreground/80">
+                Avaliação, diagnóstico e reabilitação neuropsicológica com acolhimento e embasamento científico.
+              </p>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Atendimento individualizado para crianças, adolescentes, adultos e idosos — presencial em Goiânia/GO e online.
+              </p>
+
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <a
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium shadow-lg shadow-emerald-900/10 transition-transform hover:scale-[1.02]"
+                >
+                  <MessageCircle size={18} /> Agendar pelo WhatsApp
+                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+                </a>
+                <a href="#sobre" className="text-sm font-medium text-primary underline-offset-4 hover:underline">
+                  Conheça meu trabalho
+                </a>
+              </div>
+
+              <p className="mt-5 text-xs text-muted-foreground">
+                Psicóloga registrada no CFP · {SITE.crp}
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-2">
+                <Badge icon={ShieldCheck}>7 anos de experiência</Badge>
+                <Badge icon={Video}>Presencial e online</Badge>
+                <Badge icon={Sparkles}>Avaliação e reabilitação</Badge>
+              </div>
             </div>
           </div>
 
-          <div className="relative animate-fade-up [animation-delay:120ms]">
-            <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-accent/15 via-secondary to-transparent blur-2xl" />
-            <div className="overflow-hidden rounded-[2rem] border border-border bg-secondary/60">
+          {/* RIGHT */}
+          <div className="relative bg-secondary">
+            <div className="relative h-full min-h-[420px] md:min-h-[640px]">
               <img
                 src={heroImg}
-                alt="Louraynne Talynne, neuropsicóloga e psicóloga clínica"
-                width={1024}
-                height={1280}
-                className="h-full w-full object-cover"
+                alt="[FOTO] Louraynne Talynne, neuropsicóloga e psicóloga clínica"
+                className="absolute inset-0 h-full w-full object-cover object-center rounded-t-[2rem] md:rounded-tl-[2rem] md:rounded-tr-none"
               />
+              <div className="absolute right-5 top-5 md:right-8 md:top-8 rounded-full bg-background/95 backdrop-blur px-4 py-2 text-xs font-medium text-primary shadow-md">
+                Neuropsicóloga · Goiânia/GO &amp; Online
+              </div>
             </div>
+          </div>
+        </div>
+
+        {/* STATS BAR */}
+        <div className="border-t border-secondary bg-background">
+          <div className="container-editorial grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-secondary">
+            {[
+              { k: "7+", v: "Anos de experiência clínica" },
+              { k: "7", v: "Especialidades atendidas" },
+              { k: "On/Off", v: "Presencial e online" },
+            ].map((s) => (
+              <div key={s.v} className="px-6 py-8 text-center">
+                <div className="font-display text-4xl text-primary">{s.k}</div>
+                <div className="mt-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">{s.v}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -133,9 +179,9 @@ function Home() {
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {[
-                { k: "7+", v: "anos de experiência clínica" },
-                { k: "100%", v: "atendimento individualizado" },
-                { k: "On/Off", v: "presencial e online" },
+                { k: "7+", v: "Anos de experiência" },
+                { k: "Laudo", v: "Técnico incluso" },
+                { k: "On/Off", v: "Presencial e online" },
               ].map((s) => (
                 <div key={s.v} className="rounded-2xl border border-border bg-secondary/50 p-5">
                   <div className="font-display text-3xl text-primary">{s.k}</div>
@@ -150,9 +196,7 @@ function Home() {
             <div className="overflow-hidden rounded-[2rem] border border-border">
               <img
                 src={aboutImg}
-                alt="Louraynne Talynne em consultório"
-                width={1024}
-                height={1280}
+                alt="[FOTO] Louraynne Talynne em consultório"
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
@@ -174,9 +218,12 @@ function Home() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 [&>*:last-child]:lg:col-start-2 [&>*:nth-last-child(1)]:sm:col-span-2 [&>*:nth-last-child(1)]:lg:col-span-1">
             {areas.map(({ icon: Icon, title, desc }) => (
-              <article key={title} className="group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-md">
+              <article
+                key={title}
+                className="group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-md"
+              >
                 <div className="grid h-11 w-11 place-items-center rounded-xl bg-secondary text-primary">
                   <Icon size={20} />
                 </div>
@@ -234,7 +281,10 @@ function Home() {
                 </span>
                 <div className="rounded-2xl border border-border bg-background p-6">
                   <h3 className="font-display text-xl text-primary">{it.title}</h3>
-                  <p className="mt-2 text-sm text-foreground/75">{it.desc}</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    {it.inst} · {it.year}
+                  </p>
+                  <p className="mt-3 text-sm text-foreground/75">{it.desc}</p>
                 </div>
               </li>
             ))}
@@ -242,7 +292,7 @@ function Home() {
         </div>
       </section>
 
-      {/* CTA INTERMEDIÁRIO */}
+      {/* CTA */}
       <section className="py-16">
         <div className="container-editorial">
           <div className="rounded-3xl border border-border bg-secondary/60 p-8 md:p-12">
@@ -281,7 +331,12 @@ function Home() {
               <li className="flex items-center gap-3"><MapPin size={18} className="text-accent" /> {SITE.city}</li>
               <li className="flex items-center gap-3"><User size={18} className="text-accent" /> Atendimento particular</li>
               <li className="flex items-center gap-3"><Video size={18} className="text-accent" /> Presencial e online</li>
-              <li className="flex items-center gap-3"><MessageCircle size={18} className="text-accent" /> Avaliação online apenas para adultos (+18)</li>
+              <li className="flex items-center gap-3">
+                <MessageCircle size={18} className="text-accent" />
+                <a href={whatsappLink()} target="_blank" rel="noreferrer" className="hover:text-primary">
+                  {SITE.whatsappDisplay}
+                </a>
+              </li>
             </ul>
 
             <a
@@ -333,9 +388,9 @@ function Home() {
             </div>
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-primary-foreground font-medium transition-colors hover:bg-primary/90"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium transition-opacity hover:opacity-95"
             >
-              Enviar pelo WhatsApp
+              <MessageCircle size={16} /> Enviar pelo WhatsApp
             </button>
           </form>
         </div>

@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { Instagram, MapPin, MessageCircle } from "lucide-react";
 import { SITE, whatsappLink } from "@/lib/site";
 
@@ -7,10 +6,10 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-border/60 bg-secondary/60">
       <div className="container-editorial grid gap-10 py-14 md:grid-cols-3">
         <div>
-          <Link to="/" className="flex items-center gap-2">
+          <a href="#top" className="flex items-center gap-2">
             <span className="grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground font-display text-lg">L</span>
             <span className="font-display text-xl text-primary">{SITE.name}</span>
-          </Link>
+          </a>
           <p className="mt-4 text-sm text-muted-foreground max-w-xs">
             {SITE.role}. Atendimento humanizado, ético e baseado em ciência.
           </p>
@@ -20,10 +19,11 @@ export function SiteFooter() {
         <div>
           <h3 className="text-sm font-medium text-primary mb-4">Navegação</h3>
           <ul className="space-y-2 text-sm text-foreground/80">
-            <li><Link to="/sobre" className="hover:text-primary">Sobre</Link></li>
-            <li><Link to="/areas-de-atuacao" className="hover:text-primary">Áreas de Atuação</Link></li>
-            <li><Link to="/capacitacoes" className="hover:text-primary">Capacitações</Link></li>
-            <li><Link to="/contato" className="hover:text-primary">Contato</Link></li>
+            <li><a href="#sobre" className="hover:text-primary">Sobre</a></li>
+            <li><a href="#areas" className="hover:text-primary">Áreas de Atuação</a></li>
+            <li><a href="#processo" className="hover:text-primary">Processo</a></li>
+            <li><a href="#capacitacoes" className="hover:text-primary">Capacitações</a></li>
+            <li><a href="#contato" className="hover:text-primary">Contato</a></li>
           </ul>
         </div>
 

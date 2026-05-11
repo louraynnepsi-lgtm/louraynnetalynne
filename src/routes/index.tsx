@@ -1,9 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { whatsappLink, SITE } from "@/lib/site";
 import { areas } from "@/lib/areas";
-import { ArrowRight, Calendar, MessageCircle, ShieldCheck, Sparkles, Video } from "lucide-react";
+import { ArrowRight, Calendar, GraduationCap, MapPin, MessageCircle, ShieldCheck, Sparkles, User, Video } from "lucide-react";
+import { useState } from "react";
 import heroImg from "@/assets/louraynne-hero.jpg";
+import aboutImg from "@/assets/louraynne-about.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -35,9 +37,26 @@ const steps = [
   { n: "05", t: "Direcionamento e reabilitação", d: "Plano terapêutico individualizado e encaminhamentos necessários." },
 ];
 
+const capacitacoes = [
+  { title: "Graduação em Psicologia", desc: "Formação acadêmica em Psicologia." },
+  { title: "Especialização em Neuropsicologia", desc: "Aprofundamento em avaliação e reabilitação neuropsicológica." },
+  { title: "Capacitação em Terapia Cognitivo-Comportamental", desc: "Abordagem clínica baseada em evidências." },
+  { title: "Cursos complementares", desc: "Atualização contínua em TDAH, TEA, transtornos de aprendizagem e altas habilidades." },
+];
+
 function Home() {
+  const [form, setForm] = useState({ nome: "", email: "", mensagem: "" });
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const text = `Olá, Louraynne!%0A%0ANome: ${form.nome}%0AE-mail: ${form.email}%0A%0A${form.mensagem}`;
+    window.open(`https://wa.me/${SITE.whatsappNumber}?text=${text}`, "_blank");
+  };
+
   return (
     <Layout>
+      <span id="top" />
+
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-secondary/70 via-background to-background" />
@@ -66,11 +85,10 @@ function Home() {
                 <MessageCircle size={18} /> Agendar pelo WhatsApp
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
               </a>
-              <Link to="/sobre" className="text-sm font-medium text-primary underline-offset-4 hover:underline">
+              <a href="#sobre" className="text-sm font-medium text-primary underline-offset-4 hover:underline">
                 Conheça meu trabalho
-              </Link>
+              </a>
             </div>
-            <p className="mt-3 text-xs text-muted-foreground">{SITE.crp}</p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               <Badge icon={ShieldCheck}>7 anos de experiência</Badge>
@@ -94,8 +112,57 @@ function Home() {
         </div>
       </section>
 
+      {/* SOBRE */}
+      <section id="sobre" className="scroll-mt-24 py-20 md:py-28">
+        <div className="container-editorial grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-accent">Sobre mim</p>
+            <h2 className="mt-3 font-display text-4xl text-primary sm:text-5xl">Louraynne Talynne</h2>
+            <p className="mt-2 text-sm uppercase tracking-[0.18em] text-muted-foreground">
+              {SITE.role} · {SITE.crp}
+            </p>
+
+            <div className="mt-8 space-y-5 text-foreground/80 leading-relaxed">
+              <p>
+                Sou Louraynne Talynne, neuropsicóloga e psicóloga clínica com <strong className="text-primary">7 anos de experiência</strong>. Atuo com avaliação, diagnóstico e reabilitação neuropsicológica de crianças, adolescentes, adultos e idosos, além de psicoterapia baseada na Terapia Cognitivo-Comportamental.
+              </p>
+              <p>
+                Meu trabalho une <em className="text-accent not-italic font-medium">acolhimento humano</em>, clareza clínica e embasamento científico. Acredito em um atendimento individualizado, ético e direcionado às necessidades únicas de cada paciente.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+              {[
+                { k: "7+", v: "anos de experiência clínica" },
+                { k: "100%", v: "atendimento individualizado" },
+                { k: "On/Off", v: "presencial e online" },
+              ].map((s) => (
+                <div key={s.v} className="rounded-2xl border border-border bg-secondary/50 p-5">
+                  <div className="font-display text-3xl text-primary">{s.k}</div>
+                  <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{s.v}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-accent/15 via-secondary to-transparent blur-2xl" />
+            <div className="overflow-hidden rounded-[2rem] border border-border">
+              <img
+                src={aboutImg}
+                alt="Louraynne Talynne em consultório"
+                width={1024}
+                height={1280}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ÁREAS */}
-      <section className="py-20 md:py-28">
+      <section id="areas" className="scroll-mt-24 bg-secondary/40 py-20 md:py-28">
         <div className="container-editorial">
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.2em] text-accent">Áreas de Atuação</p>
@@ -109,7 +176,7 @@ function Home() {
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {areas.map(({ icon: Icon, title, desc }) => (
-              <article key={title} className="group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-md hover:shadow-pink/5">
+              <article key={title} className="group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-md">
                 <div className="grid h-11 w-11 place-items-center rounded-xl bg-secondary text-primary">
                   <Icon size={20} />
                 </div>
@@ -121,8 +188,8 @@ function Home() {
         </div>
       </section>
 
-      {/* COMO FUNCIONA */}
-      <section className="bg-secondary/60 py-20 md:py-28">
+      {/* PROCESSO */}
+      <section id="processo" className="scroll-mt-24 py-20 md:py-28">
         <div className="container-editorial">
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.2em] text-accent">Processo</p>
@@ -146,50 +213,131 @@ function Home() {
         </div>
       </section>
 
-      {/* SOBRE RESUMIDO */}
-      <section className="py-20 md:py-28">
-        <div className="container-editorial grid gap-12 md:grid-cols-2 md:items-center">
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-accent">Sobre mim</p>
+      {/* CAPACITAÇÕES */}
+      <section id="capacitacoes" className="scroll-mt-24 bg-secondary/40 py-20 md:py-28">
+        <div className="container-editorial">
+          <div className="max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.2em] text-accent">Capacitações</p>
             <h2 className="mt-3 font-display text-3xl text-primary sm:text-4xl">
-              Acolhimento humano e clareza clínica
+              Formação e atualização contínua
             </h2>
-            <p className="mt-5 text-foreground/80">
-              Sou Louraynne Talynne, neuropsicóloga e psicóloga clínica com 7 anos de experiência. Atuo com avaliação, diagnóstico e reabilitação neuropsicológica, além de psicoterapia baseada na Terapia Cognitivo-Comportamental.
+            <p className="mt-4 text-foreground/75">
+              A prática clínica é sustentada por estudo constante.
             </p>
-            <Link
-              to="/sobre"
-              className="mt-7 inline-flex items-center gap-2 rounded-full border border-primary/30 px-5 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-            >
-              Saiba mais <ArrowRight size={16} />
-            </Link>
           </div>
-          <div className="rounded-3xl border border-border bg-secondary/60 p-8 md:p-10">
-            <Calendar size={28} className="text-accent" />
-            <h3 className="mt-4 font-display text-2xl text-primary">Pronto para o primeiro passo?</h3>
-            <p className="mt-3 text-sm text-foreground/75">
-              Atendimento presencial em Goiânia/GO e online. Avaliação online disponível apenas para adultos (+18).
-            </p>
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-whatsapp px-5 py-3 text-white text-sm font-medium hover:opacity-95"
-            >
-              <MessageCircle size={16} /> Agendar pelo WhatsApp
-            </a>
+
+          <ol className="relative mt-12 border-l border-border pl-8 md:pl-10 space-y-6">
+            {capacitacoes.map((it, i) => (
+              <li key={i} className="relative">
+                <span className="absolute -left-[42px] md:-left-[50px] top-1 grid h-9 w-9 place-items-center rounded-full bg-background border border-border text-primary">
+                  <GraduationCap size={16} />
+                </span>
+                <div className="rounded-2xl border border-border bg-background p-6">
+                  <h3 className="font-display text-xl text-primary">{it.title}</h3>
+                  <p className="mt-2 text-sm text-foreground/75">{it.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* CTA INTERMEDIÁRIO */}
+      <section className="py-16">
+        <div className="container-editorial">
+          <div className="rounded-3xl border border-border bg-secondary/60 p-8 md:p-12">
+            <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+              <div>
+                <Calendar size={28} className="text-accent" />
+                <h3 className="mt-4 font-display text-2xl text-primary sm:text-3xl">Pronto para o primeiro passo?</h3>
+                <p className="mt-3 text-sm text-foreground/75 max-w-xl">
+                  Atendimento presencial em Goiânia/GO e online. Avaliação online disponível apenas para adultos (+18).
+                </p>
+              </div>
+              <a
+                href={whatsappLink()}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium hover:opacity-95"
+              >
+                <MessageCircle size={16} /> Agendar pelo WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* DEPOIMENTOS placeholder */}
-      <section className="bg-secondary/40 py-20 md:py-24">
-        <div className="container-editorial text-center">
-          <p className="text-xs uppercase tracking-[0.2em] text-accent">Provas sociais</p>
-          <h2 className="mt-3 font-display text-3xl text-primary">Depoimentos em breve</h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm text-foreground/70">
-            Espaço reservado para experiências reais de pacientes que autorizaram a divulgação dos seus relatos.
-          </p>
+      {/* CONTATO */}
+      <section id="contato" className="scroll-mt-24 py-20 md:py-28">
+        <div className="container-editorial grid gap-12 md:grid-cols-2 md:items-start">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-accent">Contato</p>
+            <h2 className="mt-3 font-display text-4xl text-primary sm:text-5xl">Vamos conversar</h2>
+            <p className="mt-5 text-foreground/75">
+              Atendimento presencial e online com foco em acolhimento, clareza e direcionamento terapêutico.
+            </p>
+
+            <ul className="mt-8 space-y-3 text-sm text-foreground/80">
+              <li className="flex items-center gap-3"><MapPin size={18} className="text-accent" /> {SITE.city}</li>
+              <li className="flex items-center gap-3"><User size={18} className="text-accent" /> Atendimento particular</li>
+              <li className="flex items-center gap-3"><Video size={18} className="text-accent" /> Presencial e online</li>
+              <li className="flex items-center gap-3"><MessageCircle size={18} className="text-accent" /> Avaliação online apenas para adultos (+18)</li>
+            </ul>
+
+            <a
+              href={whatsappLink()}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-10 inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium hover:opacity-95"
+            >
+              <MessageCircle size={18} /> Falar pelo WhatsApp
+            </a>
+            <p className="mt-3 text-xs text-muted-foreground">{SITE.crp}</p>
+          </div>
+
+          <form
+            onSubmit={onSubmit}
+            className="rounded-3xl border border-border bg-secondary/40 p-7 md:p-9 space-y-5"
+          >
+            <div>
+              <label className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Nome</label>
+              <input
+                required
+                value={form.nome}
+                onChange={(e) => setForm({ ...form, nome: e.target.value })}
+                className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none focus:border-accent"
+                placeholder="Seu nome completo"
+              />
+            </div>
+            <div>
+              <label className="text-xs uppercase tracking-[0.18em] text-muted-foreground">E-mail</label>
+              <input
+                type="email"
+                required
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none focus:border-accent"
+                placeholder="seu@email.com"
+              />
+            </div>
+            <div>
+              <label className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Mensagem</label>
+              <textarea
+                required
+                rows={5}
+                value={form.mensagem}
+                onChange={(e) => setForm({ ...form, mensagem: e.target.value })}
+                className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none focus:border-accent resize-none"
+                placeholder="Conte um pouco sobre sua demanda"
+              />
+            </div>
+            <button
+              type="submit"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-primary-foreground font-medium transition-colors hover:bg-primary/90"
+            >
+              Enviar pelo WhatsApp
+            </button>
+          </form>
         </div>
       </section>
     </Layout>

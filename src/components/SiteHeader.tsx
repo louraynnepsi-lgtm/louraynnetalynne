@@ -1,14 +1,13 @@
-import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { SITE } from "@/lib/site";
+import { Menu, X, MessageCircle } from "lucide-react";
+import { SITE, whatsappLink } from "@/lib/site";
 
 const nav = [
-  { to: "/", label: "Home" },
-  { to: "/sobre", label: "Sobre" },
-  { to: "/areas-de-atuacao", label: "Áreas de Atuação" },
-  { to: "/capacitacoes", label: "Capacitações" },
-  { to: "/contato", label: "Contato" },
+  { href: "#sobre", label: "Sobre" },
+  { href: "#areas", label: "Áreas de Atuação" },
+  { href: "#processo", label: "Processo" },
+  { href: "#capacitacoes", label: "Capacitações" },
+  { href: "#contato", label: "Contato" },
 ] as const;
 
 export function SiteHeader() {
@@ -16,7 +15,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="container-editorial flex h-16 items-center justify-between md:h-20">
-        <Link to="/" className="flex items-center gap-2 group" onClick={() => setOpen(false)}>
+        <a href="#top" className="flex items-center gap-2" onClick={() => setOpen(false)}>
           <span className="grid h-9 w-9 place-items-center rounded-full bg-primary text-primary-foreground font-display text-lg">L</span>
           <span className="hidden sm:block font-display text-lg leading-tight text-primary">
             {SITE.name}
@@ -24,20 +23,22 @@ export function SiteHeader() {
               {SITE.crp}
             </span>
           </span>
-        </Link>
+        </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {nav.map((n) => (
-            <Link
-              key={n.to}
-              to={n.to}
-              className="text-sm text-foreground/80 transition-colors hover:text-primary"
-              activeProps={{ className: "text-primary font-medium" }}
-              activeOptions={{ exact: n.to === "/" }}
-            >
+            <a key={n.href} href={n.href} className="text-sm text-foreground/80 transition-colors hover:text-primary">
               {n.label}
-            </Link>
+            </a>
           ))}
+          <a
+            href={whatsappLink()}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-white text-sm font-medium hover:opacity-95"
+          >
+            <MessageCircle size={14} /> WhatsApp
+          </a>
         </nav>
 
         <button
@@ -53,17 +54,24 @@ export function SiteHeader() {
         <div className="md:hidden border-t border-border/60 bg-background">
           <nav className="container-editorial flex flex-col py-3">
             {nav.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
+              <a
+                key={n.href}
+                href={n.href}
                 onClick={() => setOpen(false)}
                 className="py-3 text-sm text-foreground/80"
-                activeProps={{ className: "text-primary font-medium" }}
-                activeOptions={{ exact: n.to === "/" }}
               >
                 {n.label}
-              </Link>
+              </a>
             ))}
+            <a
+              href={whatsappLink()}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-4 py-2.5 text-white text-sm font-medium"
+            >
+              <MessageCircle size={14} /> WhatsApp
+            </a>
           </nav>
         </div>
       )}

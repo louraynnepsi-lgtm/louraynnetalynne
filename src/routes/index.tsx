@@ -55,10 +55,10 @@ const steps = [
 ];
 
 const capacitacoes = [
-  { title: "Graduação em Psicologia", inst: "[Instituição]", year: "[Ano]", desc: "Formação acadêmica em Psicologia." },
-  { title: "Especialização em Neuropsicologia", inst: "[Instituição]", year: "[Ano]", desc: "Aprofundamento em avaliação e reabilitação neuropsicológica." },
-  { title: "Capacitação em Terapia Cognitivo-Comportamental", inst: "[Instituição]", year: "[Ano]", desc: "Abordagem clínica baseada em evidências." },
-  { title: "Cursos complementares", inst: "[Instituições]", year: "[Anos]", desc: "Atualização contínua em TDAH, TEA, transtornos de aprendizagem e altas habilidades." },
+  { title: "Graduação em Psicologia", desc: "Formação acadêmica sólida em Psicologia Clínica, com base teórica e prática supervisionada." },
+  { title: "Especialização em Neuropsicologia", desc: "Aprofundamento em avaliação, diagnóstico e reabilitação neuropsicológica em diferentes faixas etárias." },
+  { title: "Capacitação em Terapia Cognitivo-Comportamental (TCC)", desc: "Abordagem clínica baseada em evidências, voltada ao manejo da ansiedade e regulação emocional." },
+  { title: "Cursos complementares e atualização contínua", desc: "Aperfeiçoamento permanente em TDAH, TEA, transtornos de aprendizagem e altas habilidades/superdotação." },
 ];
 
 function Home() {

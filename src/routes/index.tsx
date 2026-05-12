@@ -396,6 +396,42 @@ function Home() {
           </form>
         </div>
       </section>
+
+      {/* MAPA */}
+      <section id="localizacao" className="scroll-mt-24 bg-secondary/40 py-16 md:py-20">
+        <div className="container-editorial">
+          <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:items-center">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-accent">Onde atendo</p>
+              <h2 className="mt-3 font-display text-3xl text-primary sm:text-4xl">Consultório em Goiânia/GO</h2>
+              <p className="mt-4 text-foreground/75">
+                Espaço acolhedor, reservado e pensado para o cuidado clínico feminino. Atendimento presencial em Goiânia e online para mulheres em todo o Brasil.
+              </p>
+              <ul className="mt-6 space-y-3 text-sm text-foreground/80">
+                <li className="flex items-center gap-3"><MapPin size={18} className="text-accent" /> Goiânia — Goiás</li>
+                <li className="flex items-center gap-3"><User size={18} className="text-accent" /> Endereço completo informado após o agendamento</li>
+              </ul>
+              <a
+                href={whatsappLink("Olá, Louraynne! Gostaria de saber o endereço do consultório.")}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium hover:opacity-95"
+              >
+                <MessageCircle size={18} /> Solicitar endereço
+              </a>
+            </div>
+            <div className="overflow-hidden rounded-3xl border border-border shadow-md">
+              <iframe
+                title="Mapa — Goiânia/GO"
+                src="https://www.google.com/maps?q=Goi%C3%A2nia%2C%20GO&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-[360px] md:h-[420px] w-full border-0"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }

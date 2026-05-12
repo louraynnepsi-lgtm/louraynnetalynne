@@ -300,9 +300,9 @@ function Home() {
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
               <div>
                 <Calendar size={28} className="text-accent" />
-                <h3 className="mt-4 font-display text-2xl text-primary sm:text-3xl">Pronto para o primeiro passo?</h3>
+                <h3 className="mt-4 font-display text-2xl text-primary sm:text-3xl">Pronta para o primeiro passo?</h3>
                 <p className="mt-3 text-sm text-foreground/75 max-w-xl">
-                  Atendimento presencial em Goiânia/GO e online. Avaliação online disponível apenas para adultos (+18).
+                  Vagas limitadas para garantir um cuidado verdadeiramente individualizado. Atendimento presencial em Goiânia/GO e online em todo o Brasil. Avaliação online disponível apenas para mulheres adultas (+18).
                 </p>
               </div>
               <a

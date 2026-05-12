@@ -325,7 +325,7 @@ function Home() {
             <p className="text-xs uppercase tracking-[0.2em] text-accent">Contato</p>
             <h2 className="mt-3 font-display text-4xl text-primary sm:text-5xl">Vamos conversar</h2>
             <p className="mt-5 text-foreground/75">
-              Atendimento presencial e online com foco em acolhimento, clareza e direcionamento terapêutico.
+              Estou aqui para ouvir você. Envie sua mensagem pelo WhatsApp ou pelo formulário ao lado e responderei pessoalmente, com toda a discrição que esse momento merece.
             </p>
 
             <ul className="mt-8 space-y-3 text-sm text-foreground/80">

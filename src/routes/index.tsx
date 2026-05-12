@@ -79,24 +79,24 @@ function Home() {
         <div className="grid md:grid-cols-2">
           {/* LEFT */}
           <div className="bg-background">
-            <div className="mx-auto max-w-xl px-5 py-14 md:px-10 md:py-20 lg:py-28 animate-fade-up">
+            <div className="mx-auto max-w-xl px-5 py-14 md:px-10 md:py-16 lg:py-20 animate-fade-up">
               <span className="inline-flex items-center gap-2 rounded-full border border-accent bg-secondary px-3.5 py-1.5 text-[11px] uppercase tracking-[0.2em] text-primary">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" /> {SITE.crp}
               </span>
 
               <p className="mt-6 text-xs uppercase tracking-[0.22em] text-accent">
-                Neuropsicologia clínica
+                Neuropsicologia clínica · Atendimento exclusivo a mulheres
               </p>
 
               <h1 className="mt-3 font-display text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-6xl">
-                Neuropsicóloga e <em className="not-italic text-accent">Psicóloga</em> Clínica
+                Cuidado clínico para a <em className="not-italic text-accent">mente da mulher</em>
               </h1>
 
               <p className="mt-6 text-lg text-foreground/80">
-                Avaliação, diagnóstico e reabilitação neuropsicológica com acolhimento e embasamento científico.
+                Avaliação neuropsicológica, reabilitação cognitiva e psicoterapia (TCC) com escuta atenta, ética profissional e ciência aplicada.
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
-                Atendimento individualizado para crianças, adolescentes, adultos e idosos — presencial em Goiânia/GO e online.
+                Espaço seguro para meninas, adolescentes, mulheres adultas e idosas — presencial em Goiânia/GO e online em todo o Brasil.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -106,7 +106,7 @@ function Home() {
                   rel="noreferrer"
                   className="group inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium shadow-lg shadow-emerald-900/10 transition-transform hover:scale-[1.02]"
                 >
-                  <MessageCircle size={18} /> Agendar pelo WhatsApp
+                  <MessageCircle size={18} /> Agendar minha avaliação
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
                 </a>
                 <a href="#sobre" className="text-sm font-medium text-primary underline-offset-4 hover:underline">
@@ -119,23 +119,27 @@ function Home() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-2">
-                <Badge icon={ShieldCheck}>7 anos de experiência</Badge>
+                <Badge icon={ShieldCheck}>+7 anos de experiência clínica</Badge>
                 <Badge icon={Video}>Presencial e online</Badge>
-                <Badge icon={Sparkles}>Avaliação e reabilitação</Badge>
+                <Badge icon={Sparkles}>Laudo técnico incluso</Badge>
               </div>
             </div>
           </div>
 
           {/* RIGHT */}
           <div className="relative bg-secondary">
-            <div className="relative h-full min-h-[420px] md:min-h-[640px]">
+            <div className="relative h-full min-h-[360px] md:min-h-[480px] lg:min-h-[560px]">
               <img
                 src={heroImg}
-                alt="[FOTO] Louraynne Talynne, neuropsicóloga e psicóloga clínica"
-                className="absolute inset-0 h-full w-full object-cover object-center rounded-t-[2rem] md:rounded-tl-[2rem] md:rounded-tr-none"
+                alt="Louraynne Talynne, neuropsicóloga e psicóloga clínica em Goiânia"
+                className="absolute inset-0 h-full w-full object-cover object-center md:object-top rounded-t-[2rem] md:rounded-tl-[2rem] md:rounded-tr-none"
               />
               <div className="absolute right-5 top-5 md:right-8 md:top-8 rounded-full bg-background/95 backdrop-blur px-4 py-2 text-xs font-medium text-primary shadow-md">
-                Neuropsicóloga · Goiânia/GO &amp; Online
+                Goiânia/GO &amp; Online
+              </div>
+              <div className="absolute left-5 bottom-5 md:left-8 md:bottom-8 rounded-2xl bg-primary/95 backdrop-blur px-4 py-3 text-xs font-medium text-primary-foreground shadow-lg max-w-[80%]">
+                <span className="block text-[10px] uppercase tracking-[0.18em] opacity-80">Espaço acolhedor</span>
+                <span className="mt-0.5 block text-sm">Atendimento exclusivo para mulheres</span>
               </div>
             </div>
           </div>

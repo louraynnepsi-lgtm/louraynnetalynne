@@ -55,10 +55,10 @@ const steps = [
 ];
 
 const capacitacoes = [
-  { title: "Graduação em Psicologia", inst: "[Instituição]", year: "[Ano]", desc: "Formação acadêmica em Psicologia." },
-  { title: "Especialização em Neuropsicologia", inst: "[Instituição]", year: "[Ano]", desc: "Aprofundamento em avaliação e reabilitação neuropsicológica." },
-  { title: "Capacitação em Terapia Cognitivo-Comportamental", inst: "[Instituição]", year: "[Ano]", desc: "Abordagem clínica baseada em evidências." },
-  { title: "Cursos complementares", inst: "[Instituições]", year: "[Anos]", desc: "Atualização contínua em TDAH, TEA, transtornos de aprendizagem e altas habilidades." },
+  { title: "Graduação em Psicologia", desc: "Formação acadêmica sólida em Psicologia Clínica, com base teórica e prática supervisionada." },
+  { title: "Especialização em Neuropsicologia", desc: "Aprofundamento em avaliação, diagnóstico e reabilitação neuropsicológica em diferentes faixas etárias." },
+  { title: "Capacitação em Terapia Cognitivo-Comportamental (TCC)", desc: "Abordagem clínica baseada em evidências, voltada ao manejo da ansiedade e regulação emocional." },
+  { title: "Cursos complementares e atualização contínua", desc: "Aperfeiçoamento permanente em TDAH, TEA, transtornos de aprendizagem e altas habilidades/superdotação." },
 ];
 
 function Home() {
@@ -79,24 +79,24 @@ function Home() {
         <div className="grid md:grid-cols-2">
           {/* LEFT */}
           <div className="bg-background">
-            <div className="mx-auto max-w-xl px-5 py-14 md:px-10 md:py-20 lg:py-28 animate-fade-up">
+            <div className="mx-auto max-w-xl px-5 py-14 md:px-10 md:py-16 lg:py-20 animate-fade-up">
               <span className="inline-flex items-center gap-2 rounded-full border border-accent bg-secondary px-3.5 py-1.5 text-[11px] uppercase tracking-[0.2em] text-primary">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" /> {SITE.crp}
               </span>
 
               <p className="mt-6 text-xs uppercase tracking-[0.22em] text-accent">
-                Neuropsicologia clínica
+                Neuropsicologia clínica · Atendimento exclusivo a mulheres
               </p>
 
               <h1 className="mt-3 font-display text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-6xl">
-                Neuropsicóloga e <em className="not-italic text-accent">Psicóloga</em> Clínica
+                Cuidado clínico para a <em className="not-italic text-accent">mente da mulher</em>
               </h1>
 
               <p className="mt-6 text-lg text-foreground/80">
-                Avaliação, diagnóstico e reabilitação neuropsicológica com acolhimento e embasamento científico.
+                Avaliação neuropsicológica, reabilitação cognitiva e psicoterapia (TCC) com escuta atenta, ética profissional e ciência aplicada.
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
-                Atendimento individualizado para crianças, adolescentes, adultos e idosos — presencial em Goiânia/GO e online.
+                Espaço seguro para meninas, adolescentes, mulheres adultas e idosas — presencial em Goiânia/GO e online em todo o Brasil.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -106,7 +106,7 @@ function Home() {
                   rel="noreferrer"
                   className="group inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium shadow-lg shadow-emerald-900/10 transition-transform hover:scale-[1.02]"
                 >
-                  <MessageCircle size={18} /> Agendar pelo WhatsApp
+                  <MessageCircle size={18} /> Agendar minha avaliação
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
                 </a>
                 <a href="#sobre" className="text-sm font-medium text-primary underline-offset-4 hover:underline">
@@ -119,23 +119,27 @@ function Home() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-2">
-                <Badge icon={ShieldCheck}>7 anos de experiência</Badge>
+                <Badge icon={ShieldCheck}>+7 anos de experiência clínica</Badge>
                 <Badge icon={Video}>Presencial e online</Badge>
-                <Badge icon={Sparkles}>Avaliação e reabilitação</Badge>
+                <Badge icon={Sparkles}>Laudo técnico incluso</Badge>
               </div>
             </div>
           </div>
 
           {/* RIGHT */}
           <div className="relative bg-secondary">
-            <div className="relative h-full min-h-[420px] md:min-h-[640px]">
+            <div className="relative h-full min-h-[360px] md:min-h-[480px] lg:min-h-[560px]">
               <img
                 src={heroImg}
-                alt="[FOTO] Louraynne Talynne, neuropsicóloga e psicóloga clínica"
-                className="absolute inset-0 h-full w-full object-cover object-center rounded-t-[2rem] md:rounded-tl-[2rem] md:rounded-tr-none"
+                alt="Louraynne Talynne, neuropsicóloga e psicóloga clínica em Goiânia"
+                className="absolute inset-0 h-full w-full object-cover object-center md:object-top rounded-t-[2rem] md:rounded-tl-[2rem] md:rounded-tr-none"
               />
               <div className="absolute right-5 top-5 md:right-8 md:top-8 rounded-full bg-background/95 backdrop-blur px-4 py-2 text-xs font-medium text-primary shadow-md">
-                Neuropsicóloga · Goiânia/GO &amp; Online
+                Goiânia/GO &amp; Online
+              </div>
+              <div className="absolute left-5 bottom-5 md:left-8 md:bottom-8 rounded-2xl bg-primary/95 backdrop-blur px-4 py-3 text-xs font-medium text-primary-foreground shadow-lg max-w-[80%]">
+                <span className="block text-[10px] uppercase tracking-[0.18em] opacity-80">Espaço acolhedor</span>
+                <span className="mt-0.5 block text-sm">Atendimento exclusivo para mulheres</span>
               </div>
             </div>
           </div>
@@ -170,10 +174,10 @@ function Home() {
 
             <div className="mt-8 space-y-5 text-foreground/80 leading-relaxed">
               <p>
-                Sou Louraynne Talynne, neuropsicóloga e psicóloga clínica com <strong className="text-primary">7 anos de experiência</strong>. Atuo com avaliação, diagnóstico e reabilitação neuropsicológica de crianças, adolescentes, adultos e idosos, além de psicoterapia baseada na Terapia Cognitivo-Comportamental.
+                Sou Louraynne Talynne, neuropsicóloga e psicóloga clínica com mais de <strong className="text-primary">7 anos de experiência</strong> dedicados ao cuidado integral da saúde mental feminina. Meu consultório é um espaço pensado para acolher meninas, adolescentes, mulheres adultas e idosas em todas as fases da vida.
               </p>
               <p>
-                Meu trabalho une <em className="text-accent not-italic font-medium">acolhimento humano</em>, clareza clínica e embasamento científico. Acredito em um atendimento individualizado, ético e direcionado às necessidades únicas de cada paciente.
+                Atuo com <em className="text-accent not-italic font-medium">avaliação neuropsicológica, reabilitação cognitiva e psicoterapia</em> baseada na Terapia Cognitivo-Comportamental (TCC). Cada atendimento é construído com escuta ética, clareza diagnóstica e embasamento científico — porque cuidar da mente exige técnica, sensibilidade e responsabilidade.
               </p>
             </div>
 
@@ -211,10 +215,10 @@ function Home() {
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.2em] text-accent">Áreas de Atuação</p>
             <h2 className="mt-3 font-display text-3xl text-primary sm:text-4xl">
-              Cuidado clínico em diferentes etapas da vida
+              Cuidado clínico para a mulher em todas as fases da vida
             </h2>
             <p className="mt-4 text-foreground/75">
-              Atendimento técnico e humanizado, desenvolvido a partir das necessidades únicas de cada paciente.
+              Da infância à terceira idade, um atendimento técnico, ético e profundamente humano — sempre direcionado às necessidades únicas de cada paciente.
             </p>
           </div>
 
@@ -281,9 +285,6 @@ function Home() {
                 </span>
                 <div className="rounded-2xl border border-border bg-background p-6">
                   <h3 className="font-display text-xl text-primary">{it.title}</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    {it.inst} · {it.year}
-                  </p>
                   <p className="mt-3 text-sm text-foreground/75">{it.desc}</p>
                 </div>
               </li>
@@ -299,9 +300,9 @@ function Home() {
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
               <div>
                 <Calendar size={28} className="text-accent" />
-                <h3 className="mt-4 font-display text-2xl text-primary sm:text-3xl">Pronto para o primeiro passo?</h3>
+                <h3 className="mt-4 font-display text-2xl text-primary sm:text-3xl">Pronta para o primeiro passo?</h3>
                 <p className="mt-3 text-sm text-foreground/75 max-w-xl">
-                  Atendimento presencial em Goiânia/GO e online. Avaliação online disponível apenas para adultos (+18).
+                  Vagas limitadas para garantir um cuidado verdadeiramente individualizado. Atendimento presencial em Goiânia/GO e online em todo o Brasil. Avaliação online disponível apenas para mulheres adultas (+18).
                 </p>
               </div>
               <a
@@ -324,12 +325,12 @@ function Home() {
             <p className="text-xs uppercase tracking-[0.2em] text-accent">Contato</p>
             <h2 className="mt-3 font-display text-4xl text-primary sm:text-5xl">Vamos conversar</h2>
             <p className="mt-5 text-foreground/75">
-              Atendimento presencial e online com foco em acolhimento, clareza e direcionamento terapêutico.
+              Estou aqui para ouvir você. Envie sua mensagem pelo WhatsApp ou pelo formulário ao lado e responderei pessoalmente, com toda a discrição que esse momento merece.
             </p>
 
             <ul className="mt-8 space-y-3 text-sm text-foreground/80">
               <li className="flex items-center gap-3"><MapPin size={18} className="text-accent" /> {SITE.city}</li>
-              <li className="flex items-center gap-3"><User size={18} className="text-accent" /> Atendimento particular</li>
+              <li className="flex items-center gap-3"><User size={18} className="text-accent" /> Atendimento particular e exclusivo para mulheres</li>
               <li className="flex items-center gap-3"><Video size={18} className="text-accent" /> Presencial e online</li>
               <li className="flex items-center gap-3">
                 <MessageCircle size={18} className="text-accent" />
@@ -393,6 +394,42 @@ function Home() {
               <MessageCircle size={16} /> Enviar pelo WhatsApp
             </button>
           </form>
+        </div>
+      </section>
+
+      {/* MAPA */}
+      <section id="localizacao" className="scroll-mt-24 bg-secondary/40 py-16 md:py-20">
+        <div className="container-editorial">
+          <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:items-center">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-accent">Onde atendo</p>
+              <h2 className="mt-3 font-display text-3xl text-primary sm:text-4xl">Consultório em Goiânia/GO</h2>
+              <p className="mt-4 text-foreground/75">
+                Espaço acolhedor, reservado e pensado para o cuidado clínico feminino. Atendimento presencial em Goiânia e online para mulheres em todo o Brasil.
+              </p>
+              <ul className="mt-6 space-y-3 text-sm text-foreground/80">
+                <li className="flex items-center gap-3"><MapPin size={18} className="text-accent" /> Goiânia — Goiás</li>
+                <li className="flex items-center gap-3"><User size={18} className="text-accent" /> Endereço completo informado após o agendamento</li>
+              </ul>
+              <a
+                href={whatsappLink("Olá, Louraynne! Gostaria de saber o endereço do consultório.")}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium hover:opacity-95"
+              >
+                <MessageCircle size={18} /> Solicitar endereço
+              </a>
+            </div>
+            <div className="overflow-hidden rounded-3xl border border-border shadow-md">
+              <iframe
+                title="Mapa — Goiânia/GO"
+                src="https://www.google.com/maps?q=Goi%C3%A2nia%2C%20GO&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-[360px] md:h-[420px] w-full border-0"
+              />
+            </div>
+          </div>
         </div>
       </section>
     </Layout>

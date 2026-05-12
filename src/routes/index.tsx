@@ -281,9 +281,6 @@ function Home() {
                 </span>
                 <div className="rounded-2xl border border-border bg-background p-6">
                   <h3 className="font-display text-xl text-primary">{it.title}</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    {it.inst} · {it.year}
-                  </p>
                   <p className="mt-3 text-sm text-foreground/75">{it.desc}</p>
                 </div>
               </li>

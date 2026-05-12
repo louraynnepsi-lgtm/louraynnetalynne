@@ -330,7 +330,7 @@ function Home() {
 
             <ul className="mt-8 space-y-3 text-sm text-foreground/80">
               <li className="flex items-center gap-3"><MapPin size={18} className="text-accent" /> {SITE.city}</li>
-              <li className="flex items-center gap-3"><User size={18} className="text-accent" /> Atendimento particular</li>
+              <li className="flex items-center gap-3"><User size={18} className="text-accent" /> Atendimento particular e exclusivo para mulheres</li>
               <li className="flex items-center gap-3"><Video size={18} className="text-accent" /> Presencial e online</li>
               <li className="flex items-center gap-3">
                 <MessageCircle size={18} className="text-accent" />

@@ -85,18 +85,18 @@ function Home() {
               </span>
 
               <p className="mt-6 text-xs uppercase tracking-[0.22em] text-accent">
-                Neuropsicologia clínica · Atendimento exclusivo a mulheres
+                Neuropsicologia clínica · Avaliação · Reabilitação · Psicoterapia
               </p>
 
               <h1 className="mt-3 font-display text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-6xl">
-                Cuidado clínico para a <em className="not-italic text-accent">mente da mulher</em>
+                Cuidado clínico para a sua <em className="not-italic text-accent">saúde mental</em>
               </h1>
 
               <p className="mt-6 text-lg text-foreground/80">
                 Avaliação neuropsicológica, reabilitação cognitiva e psicoterapia (TCC) com escuta atenta, ética profissional e ciência aplicada.
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
-                Espaço seguro para meninas, adolescentes, mulheres adultas e idosas — presencial em Goiânia/GO e online em todo o Brasil.
+                Atendimento para crianças, adolescentes, adultos e idosos — presencial em Goiânia/GO e online em todo o Brasil.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -139,7 +139,7 @@ function Home() {
               </div>
               <div className="absolute left-5 bottom-5 md:left-8 md:bottom-8 rounded-2xl bg-primary/95 backdrop-blur px-4 py-3 text-xs font-medium text-primary-foreground shadow-lg max-w-[80%]">
                 <span className="block text-[10px] uppercase tracking-[0.18em] opacity-80">Espaço acolhedor</span>
-                <span className="mt-0.5 block text-sm">Atendimento exclusivo para mulheres</span>
+                <span className="mt-0.5 block text-sm">Atendimento humano e individualizado</span>
               </div>
             </div>
           </div>
@@ -174,7 +174,7 @@ function Home() {
 
             <div className="mt-8 space-y-5 text-foreground/80 leading-relaxed">
               <p>
-                Sou Louraynne Talynne, neuropsicóloga e psicóloga clínica com mais de <strong className="text-primary">7 anos de experiência</strong> dedicados ao cuidado integral da saúde mental feminina. Meu consultório é um espaço pensado para acolher meninas, adolescentes, mulheres adultas e idosas em todas as fases da vida.
+                Sou Louraynne Talynne, neuropsicóloga e psicóloga clínica com mais de <strong className="text-primary">7 anos de experiência</strong> dedicados ao cuidado integral da saúde mental. Atendo crianças, adolescentes, adultos e idosos em todas as fases da vida.
               </p>
               <p>
                 Atuo com <em className="text-accent not-italic font-medium">avaliação neuropsicológica, reabilitação cognitiva e psicoterapia</em> baseada na Terapia Cognitivo-Comportamental (TCC). Cada atendimento é construído com escuta ética, clareza diagnóstica e embasamento científico — porque cuidar da mente exige técnica, sensibilidade e responsabilidade.
@@ -215,10 +215,10 @@ function Home() {
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.2em] text-accent">Áreas de Atuação</p>
             <h2 className="mt-3 font-display text-3xl text-primary sm:text-4xl">
-              Cuidado clínico para a mulher em todas as fases da vida
+              Cuidado clínico em todas as fases da vida
             </h2>
             <p className="mt-4 text-foreground/75">
-              Da infância à terceira idade, um atendimento técnico, ético e profundamente humano — sempre direcionado às necessidades únicas de cada paciente.
+              Da infância à terceira idade, um atendimento técnico, ético e profundamente humano — direcionado às necessidades únicas de cada paciente.
             </p>
           </div>
 
@@ -300,9 +300,9 @@ function Home() {
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
               <div>
                 <Calendar size={28} className="text-accent" />
-                <h3 className="mt-4 font-display text-2xl text-primary sm:text-3xl">Pronta para o primeiro passo?</h3>
+                <h3 className="mt-4 font-display text-2xl text-primary sm:text-3xl">Pronto para o primeiro passo?</h3>
                 <p className="mt-3 text-sm text-foreground/75 max-w-xl">
-                  Vagas limitadas para garantir um cuidado verdadeiramente individualizado. Atendimento presencial em Goiânia/GO e online em todo o Brasil. Avaliação online disponível apenas para mulheres adultas (+18).
+                  Vagas limitadas para garantir um cuidado verdadeiramente individualizado. Atendimento presencial em Goiânia/GO e online em todo o Brasil.
                 </p>
               </div>
               <a
@@ -329,8 +329,8 @@ function Home() {
             </p>
 
             <ul className="mt-8 space-y-3 text-sm text-foreground/80">
-              <li className="flex items-center gap-3"><MapPin size={18} className="text-accent" /> {SITE.city}</li>
-              <li className="flex items-center gap-3"><User size={18} className="text-accent" /> Atendimento particular e exclusivo para mulheres</li>
+              <li className="flex items-start gap-3"><MapPin size={18} className="text-accent mt-0.5 shrink-0" /> {SITE.address}</li>
+              <li className="flex items-center gap-3"><User size={18} className="text-accent" /> Atendimento particular</li>
               <li className="flex items-center gap-3"><Video size={18} className="text-accent" /> Presencial e online</li>
               <li className="flex items-center gap-3">
                 <MessageCircle size={18} className="text-accent" />
@@ -405,25 +405,25 @@ function Home() {
               <p className="text-xs uppercase tracking-[0.2em] text-accent">Onde atendo</p>
               <h2 className="mt-3 font-display text-3xl text-primary sm:text-4xl">Consultório em Goiânia/GO</h2>
               <p className="mt-4 text-foreground/75">
-                Espaço acolhedor, reservado e pensado para o cuidado clínico feminino. Atendimento presencial em Goiânia e online para mulheres em todo o Brasil.
+                Espaço acolhedor e reservado, pensado para o cuidado clínico. Atendimento presencial em Goiânia e online em todo o Brasil.
               </p>
               <ul className="mt-6 space-y-3 text-sm text-foreground/80">
-                <li className="flex items-center gap-3"><MapPin size={18} className="text-accent" /> Goiânia — Goiás</li>
-                <li className="flex items-center gap-3"><User size={18} className="text-accent" /> Endereço completo informado após o agendamento</li>
+                <li className="flex items-start gap-3"><MapPin size={18} className="text-accent mt-0.5 shrink-0" /> {SITE.address}</li>
+                <li className="flex items-center gap-3"><User size={18} className="text-accent" /> Recepção mediante agendamento</li>
               </ul>
               <a
-                href={whatsappLink("Olá, Louraynne! Gostaria de saber o endereço do consultório.")}
+                href={whatsappLink("Olá, Louraynne! Gostaria de agendar um atendimento no consultório.")}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium hover:opacity-95"
               >
-                <MessageCircle size={18} /> Solicitar endereço
+                <MessageCircle size={18} /> Agendar atendimento
               </a>
             </div>
             <div className="overflow-hidden rounded-3xl border border-border shadow-md">
               <iframe
-                title="Mapa — Goiânia/GO"
-                src="https://www.google.com/maps?q=Goi%C3%A2nia%2C%20GO&output=embed"
+                title="Mapa — Rua C-154, 139, Jd. América, Goiânia/GO"
+                src="https://www.google.com/maps?q=Rua%20C-154%2C%20139%2C%20Jardim%20Am%C3%A9rica%2C%20Goi%C3%A2nia%2C%20GO%2C%2074275-070&output=embed"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="h-[360px] md:h-[420px] w-full border-0"

@@ -139,7 +139,7 @@ function Home() {
               </div>
               <div className="absolute left-5 bottom-5 md:left-8 md:bottom-8 rounded-2xl bg-primary/95 backdrop-blur px-4 py-3 text-xs font-medium text-primary-foreground shadow-lg max-w-[80%]">
                 <span className="block text-[10px] uppercase tracking-[0.18em] opacity-80">Espaço acolhedor</span>
-                <span className="mt-0.5 block text-sm">Atendimento exclusivo para mulheres</span>
+                <span className="mt-0.5 block text-sm">Atendimento humano e individualizado</span>
               </div>
             </div>
           </div>

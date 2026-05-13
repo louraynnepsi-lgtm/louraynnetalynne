@@ -75,11 +75,11 @@ function Home() {
       <span id="top" />
 
       {/* HERO — two-column split */}
-      <section className="relative">
-        <div className="grid md:grid-cols-2">
+      <section className="relative lg:h-[calc(100svh-72px)] lg:min-h-[600px] lg:max-h-[820px] lg:flex lg:flex-col">
+        <div className="grid md:grid-cols-2 lg:flex-1 lg:min-h-0">
           {/* LEFT */}
-          <div className="bg-background">
-            <div className="mx-auto max-w-xl px-5 py-14 md:px-10 md:py-16 lg:py-20 animate-fade-up">
+          <div className="bg-background lg:flex lg:items-center">
+            <div className="mx-auto max-w-xl px-5 py-10 md:px-10 md:py-12 lg:py-8 animate-fade-up">
               <span className="inline-flex items-center gap-2 rounded-full border border-accent bg-secondary px-3.5 py-1.5 text-[11px] uppercase tracking-[0.2em] text-primary">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" /> {SITE.crp}
               </span>
@@ -88,23 +88,23 @@ function Home() {
                 Neuropsicologia clínica · Avaliação · Reabilitação · Psicoterapia
               </p>
 
-              <h1 className="mt-3 font-display text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-6xl">
+              <h1 className="mt-3 font-display text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-[3.25rem] xl:text-6xl">
                 Cuidado clínico para a sua <em className="not-italic text-accent">saúde mental</em>
               </h1>
 
-              <p className="mt-6 text-lg text-foreground/80">
+              <p className="mt-5 text-base lg:text-[15px] text-foreground/80">
                 Avaliação neuropsicológica, reabilitação cognitiva e psicoterapia (TCC) com escuta atenta, ética profissional e ciência aplicada.
               </p>
-              <p className="mt-4 text-sm text-muted-foreground">
+              <p className="mt-3 text-sm text-muted-foreground">
                 Atendimento para crianças, adolescentes, adultos e idosos — presencial em Goiânia/GO e online em todo o Brasil.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              <div className="mt-6 flex flex-wrap items-center gap-4">
                 <a
                   href={whatsappLink()}
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium shadow-lg shadow-emerald-900/10 transition-transform hover:scale-[1.02]"
+                  className="group inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 text-white font-medium shadow-lg shadow-emerald-900/10 transition-transform hover:scale-[1.02]"
                 >
                   <MessageCircle size={18} /> Agendar minha avaliação
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
@@ -114,11 +114,11 @@ function Home() {
                 </a>
               </div>
 
-              <p className="mt-5 text-xs text-muted-foreground">
+              <p className="mt-4 text-xs text-muted-foreground">
                 Psicóloga registrada no CFP · {SITE.crp}
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-2">
+              <div className="mt-5 flex flex-wrap gap-2">
                 <Badge icon={ShieldCheck}>+7 anos de experiência clínica</Badge>
                 <Badge icon={Video}>Presencial e online</Badge>
                 <Badge icon={Sparkles}>Laudo técnico incluso</Badge>
@@ -128,7 +128,7 @@ function Home() {
 
           {/* RIGHT */}
           <div className="relative bg-secondary">
-            <div className="relative h-full min-h-[360px] md:min-h-[480px] lg:min-h-[560px]">
+            <div className="relative h-full min-h-[320px] md:min-h-[420px] lg:min-h-0">
               <img
                 src={heroImg}
                 alt="Louraynne Talynne, neuropsicóloga e psicóloga clínica em Goiânia"
@@ -146,15 +146,15 @@ function Home() {
         </div>
 
         {/* STATS BAR */}
-        <div className="border-t border-secondary bg-background">
+        <div className="border-t border-secondary bg-background lg:shrink-0">
           <div className="container-editorial grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-secondary">
             {[
               { k: "7+", v: "Anos de experiência clínica" },
               { k: "7", v: "Especialidades atendidas" },
               { k: "On/Off", v: "Presencial e online" },
             ].map((s) => (
-              <div key={s.v} className="px-6 py-8 text-center">
-                <div className="font-display text-4xl text-primary">{s.k}</div>
+              <div key={s.v} className="px-6 py-5 lg:py-4 text-center">
+                <div className="font-display text-3xl lg:text-2xl text-primary">{s.k}</div>
                 <div className="mt-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">{s.v}</div>
               </div>
             ))}

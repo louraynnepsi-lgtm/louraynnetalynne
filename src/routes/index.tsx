@@ -99,12 +99,12 @@ function Home() {
                 Atendimento para crianças, adolescentes, adultos e idosos — presencial em Goiânia/GO e online em todo o Brasil.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              <div className="mt-6 flex flex-wrap items-center gap-4">
                 <a
                   href={whatsappLink()}
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium shadow-lg shadow-emerald-900/10 transition-transform hover:scale-[1.02]"
+                  className="group inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 text-white font-medium shadow-lg shadow-emerald-900/10 transition-transform hover:scale-[1.02]"
                 >
                   <MessageCircle size={18} /> Agendar minha avaliação
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
@@ -114,11 +114,11 @@ function Home() {
                 </a>
               </div>
 
-              <p className="mt-5 text-xs text-muted-foreground">
+              <p className="mt-4 text-xs text-muted-foreground">
                 Psicóloga registrada no CFP · {SITE.crp}
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-2">
+              <div className="mt-5 flex flex-wrap gap-2">
                 <Badge icon={ShieldCheck}>+7 anos de experiência clínica</Badge>
                 <Badge icon={Video}>Presencial e online</Badge>
                 <Badge icon={Sparkles}>Laudo técnico incluso</Badge>

@@ -146,15 +146,15 @@ function Home() {
         </div>
 
         {/* STATS BAR */}
-        <div className="border-t border-secondary bg-background">
+        <div className="border-t border-secondary bg-background lg:shrink-0">
           <div className="container-editorial grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-secondary">
             {[
               { k: "7+", v: "Anos de experiência clínica" },
               { k: "7", v: "Especialidades atendidas" },
               { k: "On/Off", v: "Presencial e online" },
             ].map((s) => (
-              <div key={s.v} className="px-6 py-8 text-center">
-                <div className="font-display text-4xl text-primary">{s.k}</div>
+              <div key={s.v} className="px-6 py-5 lg:py-4 text-center">
+                <div className="font-display text-3xl lg:text-2xl text-primary">{s.k}</div>
                 <div className="mt-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">{s.v}</div>
               </div>
             ))}

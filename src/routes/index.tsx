@@ -75,11 +75,11 @@ function Home() {
       <span id="top" />
 
       {/* HERO — two-column split */}
-      <section className="relative">
-        <div className="grid md:grid-cols-2">
+      <section className="relative lg:h-[calc(100svh-72px)] lg:min-h-[600px] lg:max-h-[820px] lg:flex lg:flex-col">
+        <div className="grid md:grid-cols-2 lg:flex-1 lg:min-h-0">
           {/* LEFT */}
-          <div className="bg-background">
-            <div className="mx-auto max-w-xl px-5 py-14 md:px-10 md:py-16 lg:py-20 animate-fade-up">
+          <div className="bg-background lg:flex lg:items-center">
+            <div className="mx-auto max-w-xl px-5 py-10 md:px-10 md:py-12 lg:py-8 animate-fade-up">
               <span className="inline-flex items-center gap-2 rounded-full border border-accent bg-secondary px-3.5 py-1.5 text-[11px] uppercase tracking-[0.2em] text-primary">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" /> {SITE.crp}
               </span>

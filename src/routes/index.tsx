@@ -75,31 +75,31 @@ function Home() {
       <span id="top" />
 
       {/* HERO — two-column split */}
-      <section className="relative lg:h-[calc(100svh-72px)] lg:min-h-[600px] lg:max-h-[820px] lg:flex lg:flex-col">
-        <div className="grid md:grid-cols-2 lg:flex-1 lg:min-h-0">
+      <section className="relative lg:h-[calc(100svh-72px)] lg:min-h-[640px] lg:max-h-[860px] lg:flex lg:flex-col">
+        <div className="grid md:grid-cols-[1.15fr_1fr] lg:flex-1 lg:min-h-0">
           {/* LEFT */}
           <div className="bg-background lg:flex lg:items-center">
-            <div className="mx-auto max-w-xl px-5 py-10 md:px-10 md:py-12 lg:py-8 animate-fade-up">
+            <div className="mx-auto w-full max-w-xl px-5 py-10 md:px-10 md:py-12 lg:py-6 animate-fade-up">
               <span className="inline-flex items-center gap-2 rounded-full border border-accent bg-secondary px-3.5 py-1.5 text-[11px] uppercase tracking-[0.2em] text-primary">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" /> {SITE.crp}
               </span>
 
-              <p className="mt-6 text-xs uppercase tracking-[0.22em] text-accent">
+              <p className="mt-5 text-[11px] uppercase tracking-[0.22em] text-accent">
                 Neuropsicologia clínica · Avaliação · Reabilitação · Psicoterapia
               </p>
 
-              <h1 className="mt-3 font-display text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-[3.25rem] xl:text-6xl">
+              <h1 className="mt-3 font-display text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-[2.75rem] xl:text-[3.25rem]">
                 Cuidado clínico para a sua <em className="not-italic text-accent">saúde mental</em>
               </h1>
 
-              <p className="mt-5 text-base lg:text-[15px] text-foreground/80">
+              <p className="mt-4 text-base lg:text-[15px] text-foreground/80">
                 Avaliação neuropsicológica, reabilitação cognitiva e psicoterapia (TCC) com escuta atenta, ética profissional e ciência aplicada.
               </p>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Atendimento para crianças, adolescentes, adultos e idosos — presencial em Goiânia/GO e online em todo o Brasil.
+              <p className="mt-2 text-sm text-muted-foreground">
+                Crianças, adolescentes, adultos e idosos — presencial em Goiânia/GO e online em todo o Brasil.
               </p>
 
-              <div className="mt-6 flex flex-wrap items-center gap-4">
+              <div className="mt-5 flex flex-wrap items-center gap-4">
                 <a
                   href={whatsappLink()}
                   target="_blank"
@@ -114,30 +114,30 @@ function Home() {
                 </a>
               </div>
 
-              <p className="mt-4 text-xs text-muted-foreground">
-                Psicóloga registrada no CFP · {SITE.crp}
-              </p>
-
               <div className="mt-5 flex flex-wrap gap-2">
-                <Badge icon={ShieldCheck}>+7 anos de experiência clínica</Badge>
+                <Badge icon={ShieldCheck}>+7 anos de experiência</Badge>
                 <Badge icon={Video}>Presencial e online</Badge>
                 <Badge icon={Sparkles}>Laudo técnico incluso</Badge>
               </div>
+
+              <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                Psicóloga registrada no CFP · {SITE.crp}
+              </p>
             </div>
           </div>
 
           {/* RIGHT */}
-          <div className="relative bg-secondary">
-            <div className="relative h-full min-h-[320px] md:min-h-[420px] lg:min-h-0">
+          <div className="relative bg-background flex items-center justify-center p-5 md:p-6 lg:p-8">
+            <div className="relative w-full h-full min-h-[360px] md:min-h-0 overflow-hidden rounded-[1.75rem] border border-border shadow-xl shadow-primary/5 bg-secondary">
               <img
                 src={heroImg}
                 alt="Louraynne Talynne, neuropsicóloga e psicóloga clínica em Goiânia"
-                className="absolute inset-0 h-full w-full object-cover object-center md:object-top rounded-t-[2rem] md:rounded-tl-[2rem] md:rounded-tr-none"
+                className="absolute inset-0 h-full w-full object-cover object-top"
               />
-              <div className="absolute right-5 top-5 md:right-8 md:top-8 rounded-full bg-background/95 backdrop-blur px-4 py-2 text-xs font-medium text-primary shadow-md">
+              <div className="absolute right-4 top-4 md:right-5 md:top-5 rounded-full bg-background/95 backdrop-blur px-3.5 py-1.5 text-[11px] font-medium text-primary shadow-md">
                 Goiânia/GO &amp; Online
               </div>
-              <div className="absolute left-5 bottom-5 md:left-8 md:bottom-8 rounded-2xl bg-primary/95 backdrop-blur px-4 py-3 text-xs font-medium text-primary-foreground shadow-lg max-w-[80%]">
+              <div className="absolute left-4 bottom-4 md:left-5 md:bottom-5 rounded-2xl bg-primary/95 backdrop-blur px-4 py-2.5 text-xs font-medium text-primary-foreground shadow-lg max-w-[85%]">
                 <span className="block text-[10px] uppercase tracking-[0.18em] opacity-80">Espaço acolhedor</span>
                 <span className="mt-0.5 block text-sm">Atendimento humano e individualizado</span>
               </div>
@@ -155,7 +155,7 @@ function Home() {
             ].map((s) => (
               <div key={s.v} className="px-6 py-5 lg:py-4 text-center">
                 <div className="font-display text-3xl lg:text-2xl text-primary">{s.k}</div>
-                <div className="mt-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">{s.v}</div>
+                <div className="mt-1.5 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{s.v}</div>
               </div>
             ))}
           </div>

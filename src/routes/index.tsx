@@ -88,14 +88,14 @@ function Home() {
                 Neuropsicologia clínica · Avaliação · Reabilitação · Psicoterapia
               </p>
 
-              <h1 className="mt-3 font-display text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-6xl">
+              <h1 className="mt-3 font-display text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-[3.25rem] xl:text-6xl">
                 Cuidado clínico para a sua <em className="not-italic text-accent">saúde mental</em>
               </h1>
 
-              <p className="mt-6 text-lg text-foreground/80">
+              <p className="mt-5 text-base lg:text-[15px] text-foreground/80">
                 Avaliação neuropsicológica, reabilitação cognitiva e psicoterapia (TCC) com escuta atenta, ética profissional e ciência aplicada.
               </p>
-              <p className="mt-4 text-sm text-muted-foreground">
+              <p className="mt-3 text-sm text-muted-foreground">
                 Atendimento para crianças, adolescentes, adultos e idosos — presencial em Goiânia/GO e online em todo o Brasil.
               </p>
 

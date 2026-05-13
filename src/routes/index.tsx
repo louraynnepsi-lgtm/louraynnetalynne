@@ -215,10 +215,10 @@ function Home() {
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.2em] text-accent">Áreas de Atuação</p>
             <h2 className="mt-3 font-display text-3xl text-primary sm:text-4xl">
-              Cuidado clínico para a mulher em todas as fases da vida
+              Cuidado clínico em todas as fases da vida
             </h2>
             <p className="mt-4 text-foreground/75">
-              Da infância à terceira idade, um atendimento técnico, ético e profundamente humano — sempre direcionado às necessidades únicas de cada paciente.
+              Da infância à terceira idade, um atendimento técnico, ético e profundamente humano — direcionado às necessidades únicas de cada paciente.
             </p>
           </div>
 

@@ -85,18 +85,18 @@ function Home() {
               </span>
 
               <p className="mt-6 text-xs uppercase tracking-[0.22em] text-accent">
-                Neuropsicologia clínica · Atendimento exclusivo a mulheres
+                Neuropsicologia clínica · Avaliação · Reabilitação · Psicoterapia
               </p>
 
               <h1 className="mt-3 font-display text-4xl leading-[1.05] text-primary sm:text-5xl lg:text-6xl">
-                Cuidado clínico para a <em className="not-italic text-accent">mente da mulher</em>
+                Cuidado clínico para a sua <em className="not-italic text-accent">saúde mental</em>
               </h1>
 
               <p className="mt-6 text-lg text-foreground/80">
                 Avaliação neuropsicológica, reabilitação cognitiva e psicoterapia (TCC) com escuta atenta, ética profissional e ciência aplicada.
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
-                Espaço seguro para meninas, adolescentes, mulheres adultas e idosas — presencial em Goiânia/GO e online em todo o Brasil.
+                Atendimento para crianças, adolescentes, adultos e idosos — presencial em Goiânia/GO e online em todo o Brasil.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">

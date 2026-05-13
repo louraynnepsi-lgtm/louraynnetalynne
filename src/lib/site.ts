@@ -8,7 +8,7 @@ export const SITE = {
   whatsappText: "Olá, Louraynne! Gostaria de agendar uma avaliação.",
   instagramHandle: "@psi.louraynnetalynne",
   instagram: "https://instagram.com/psi.louraynnetalynne",
-  audience: "Atendimento exclusivo para mulheres",
+  address: "Rua C-154, 139 — Jd. América, Goiânia/GO, 74275-070",
 };
 
 export const whatsappLink = (text = SITE.whatsappText) =>

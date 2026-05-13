@@ -128,7 +128,7 @@ function Home() {
 
           {/* RIGHT */}
           <div className="relative bg-secondary">
-            <div className="relative h-full min-h-[360px] md:min-h-[480px] lg:min-h-[560px]">
+            <div className="relative h-full min-h-[320px] md:min-h-[420px] lg:min-h-0">
               <img
                 src={heroImg}
                 alt="Louraynne Talynne, neuropsicóloga e psicóloga clínica em Goiânia"

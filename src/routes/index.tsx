@@ -174,7 +174,7 @@ function Home() {
 
             <div className="mt-8 space-y-5 text-foreground/80 leading-relaxed">
               <p>
-                Sou Louraynne Talynne, neuropsicóloga e psicóloga clínica com mais de <strong className="text-primary">7 anos de experiência</strong> dedicados ao cuidado integral da saúde mental feminina. Meu consultório é um espaço pensado para acolher meninas, adolescentes, mulheres adultas e idosas em todas as fases da vida.
+                Sou Louraynne Talynne, neuropsicóloga e psicóloga clínica com mais de <strong className="text-primary">7 anos de experiência</strong> dedicados ao cuidado integral da saúde mental. Atendo crianças, adolescentes, adultos e idosos em todas as fases da vida.
               </p>
               <p>
                 Atuo com <em className="text-accent not-italic font-medium">avaliação neuropsicológica, reabilitação cognitiva e psicoterapia</em> baseada na Terapia Cognitivo-Comportamental (TCC). Cada atendimento é construído com escuta ética, clareza diagnóstica e embasamento científico — porque cuidar da mente exige técnica, sensibilidade e responsabilidade.

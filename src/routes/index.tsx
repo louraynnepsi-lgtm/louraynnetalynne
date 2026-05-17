@@ -50,7 +50,7 @@ const steps = [
   { n: "01", t: "Entrevista inicial", d: "Acolhimento, escuta e compreensão da queixa principal e histórico." },
   { n: "02", t: "Investigação clínica", d: "Análise contextual, anamnese detalhada e definição das hipóteses." },
   { n: "03", t: "Aplicação de testes", d: "Bateria de instrumentos validados, conduzida com cuidado e ética." },
-  { n: "04", t: "Emissão de laudo", d: "Documento técnico claro, com diagnóstico e considerações clínicas." },
+  { n: "04", t: "Emissão de laudo", d: "Documento técnico que integra os resultados da avaliação, com análise das funções cognitivas, emocionais e comportamentais, identificando potencialidades, dificuldades e conclusões diagnósticas." },
   { n: "05", t: "Direcionamento e reabilitação", d: "Plano terapêutico individualizado e encaminhamentos necessários." },
 ];
 

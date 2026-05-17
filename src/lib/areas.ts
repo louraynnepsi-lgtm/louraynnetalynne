@@ -1,11 +1,23 @@
-import { Brain, HeartHandshake, Sparkles, BookOpen, Activity, Puzzle, Zap } from "lucide-react";
+import { Brain, HeartHandshake, Sparkles, BookOpen, Activity, Puzzle, Zap, Stethoscope, ClipboardCheck, HeartPulse } from "lucide-react";
 
 export const areas = [
+  {
+    slug: "psicoterapia",
+    icon: HeartPulse,
+    title: "Psicoterapia & Acompanhamento Psicológico",
+    desc: "Acompanhamento clínico contínuo para pacientes com TDAH, ansiedade, depressão e outras demandas emocionais, com base na Terapia Cognitivo-Comportamental (TCC).",
+  },
   {
     slug: "avaliacao",
     icon: Brain,
     title: "Avaliação Neuropsicológica",
     desc: "Investigação clínica completa das funções cognitivas, comportamentais e emocionais, com emissão de laudo técnico.",
+  },
+  {
+    slug: "avaliacao-psicologica",
+    icon: ClipboardCheck,
+    title: "Avaliação Psicológica",
+    desc: "Laudos e pareceres psicológicos para cirurgia bariátrica, cirurgias eletivas, concursos públicos e demais finalidades específicas.",
   },
   {
     slug: "reabilitacao",
@@ -34,8 +46,8 @@ export const areas = [
   {
     slug: "ansiedade",
     icon: HeartHandshake,
-    title: "Ansiedade",
-    desc: "Psicoterapia baseada em TCC para manejo da ansiedade, com foco em estratégias práticas e acolhimento.",
+    title: "Ansiedade & Depressão",
+    desc: "Psicoterapia baseada em TCC para manejo da ansiedade, depressão e regulação emocional, com foco em estratégias práticas e acolhimento.",
   },
   {
     slug: "altas-habilidades",

@@ -76,6 +76,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Neuropsicóloga e psicóloga clínica em Goiânia. Avaliação, diagnóstico e reabilitação neuropsicológica com acolhimento e embasamento científico." },
       { name: "author", content: "Louraynne Talynne" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Louraynne Talynne — Neuropsicóloga em Goiânia" },
+      { name: "twitter:title", content: "Louraynne Talynne — Neuropsicóloga em Goiânia" },
+      { property: "og:description", content: "Neuropsicóloga e psicóloga clínica em Goiânia. Avaliação, diagnóstico e reabilitação neuropsicológica com acolhimento e embasamento científico." },
+      { name: "twitter:description", content: "Neuropsicóloga e psicóloga clínica em Goiânia. Avaliação, diagnóstico e reabilitação neuropsicológica com acolhimento e embasamento científico." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/149b94f4-6d20-4d5a-b684-60dde43a14c3/id-preview-c4b0db7d--74050001-ad89-4dc5-973c-70317b2f575a.lovable.app-1779038644975.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/149b94f4-6d20-4d5a-b684-60dde43a14c3/id-preview-c4b0db7d--74050001-ad89-4dc5-973c-70317b2f575a.lovable.app-1779038644975.png" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       {

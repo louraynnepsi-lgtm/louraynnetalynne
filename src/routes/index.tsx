@@ -1,3 +1,4 @@
+import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { whatsappLink, SITE } from "@/lib/site";
 import { areas } from "@/lib/areas";
@@ -15,6 +16,27 @@ import {
 import { useState } from "react";
 import heroImg from "@/assets/louraynne-hero.jpg";
 import aboutImg from "@/assets/louraynne-about.jpg";
+
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Louraynne Talynne — Neuropsicóloga em Goiânia | Avaliação Neuropsicológica" },
+      {
+        name: "description",
+        content:
+          "Neuropsicóloga e psicóloga clínica em Goiânia. Avaliação neuropsicológica, laudo, reabilitação e psicoterapia (TCC) para crianças, adolescentes, adultos e idosos.",
+      },
+      { property: "og:title", content: "Louraynne Talynne — Neuropsicóloga em Goiânia" },
+      {
+        property: "og:description",
+        content: "Avaliação, diagnóstico e reabilitação neuropsicológica com acolhimento e embasamento científico.",
+      },
+      { property: "og:image", content: heroImg },
+      { property: "og:type", content: "website" },
+    ],
+  }),
+  component: Home,
+});
 
 function Badge({ icon: Icon, children }: { icon: React.ElementType; children: React.ReactNode }) {
   return (
@@ -39,7 +61,7 @@ const capacitacoes = [
   { title: "Cursos complementares e atualização contínua", desc: "Aperfeiçoamento permanente em TDAH, TEA, transtornos de aprendizagem e altas habilidades/superdotação." },
 ];
 
-export function App() {
+function Home() {
   const [form, setForm] = useState({ nome: "", email: "", mensagem: "" });
 
   const onSubmit = (e: React.FormEvent) => {

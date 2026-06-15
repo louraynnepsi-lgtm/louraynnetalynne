@@ -67,7 +67,9 @@ function Home() {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = `Olá, Louraynne!%0A%0ANome: ${form.nome}%0AE-mail: ${form.email}%0A%0A${form.mensagem}`;
-    window.open(`https://wa.me/${SITE.whatsappNumber}?text=${text}`, "_blank");
+    const url = `https://wa.me/${SITE.whatsappNumber}?text=${text}`;
+    (window as any).gtag_report_conversion?.(url);
+    window.open(url, "_blank");
   };
 
   return (

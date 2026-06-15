@@ -106,6 +106,7 @@ function Home() {
                   href={whatsappLink()}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={(e) => (window as any).gtag_report_conversion?.(e.currentTarget.href)}
                   className="group inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 text-white font-medium shadow-lg shadow-emerald-900/10 transition-transform hover:scale-[1.02]"
                 >
                   <MessageCircle size={18} /> Agendar minha avaliação

@@ -338,7 +338,7 @@ function Home() {
               <li className="flex items-center gap-3"><Video size={18} className="text-accent" /> Presencial e online</li>
               <li className="flex items-center gap-3">
                 <MessageCircle size={18} className="text-accent" />
-                <a href={whatsappLink()} target="_blank" rel="noreferrer" className="hover:text-primary">
+                <a href={whatsappLink()} target="_blank" rel="noreferrer" onClick={(e) => (window as any).gtag_report_conversion?.(e.currentTarget.href)} className="hover:text-primary">
                   {SITE.whatsappDisplay}
                 </a>
               </li>

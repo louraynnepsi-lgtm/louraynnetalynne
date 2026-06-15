@@ -348,6 +348,7 @@ function Home() {
               href={whatsappLink()}
               target="_blank"
               rel="noreferrer"
+              onClick={(e) => (window as any).gtag_report_conversion?.(e.currentTarget.href)}
               className="mt-10 inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium hover:opacity-95"
             >
               <MessageCircle size={18} /> Falar pelo WhatsApp

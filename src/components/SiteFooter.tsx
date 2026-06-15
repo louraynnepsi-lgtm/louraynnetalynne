@@ -38,7 +38,7 @@ export function SiteFooter() {
             </li>
             <li className="flex items-center gap-2"><MessageCircle size={16} className="text-accent" /> {SITE.whatsappDisplay}</li>
             <li>
-              <a href={whatsappLink()} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-white text-sm font-medium shadow-sm hover:opacity-95">
+              <a href={whatsappLink()} target="_blank" rel="noreferrer" onClick={(e) => (window as any).gtag_report_conversion?.(e.currentTarget.href)} className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-white text-sm font-medium shadow-sm hover:opacity-95">
                 <MessageCircle size={16} /> WhatsApp
               </a>
             </li>

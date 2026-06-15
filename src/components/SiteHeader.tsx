@@ -30,6 +30,7 @@ export function SiteHeader() {
             href={whatsappLink()}
             target="_blank"
             rel="noreferrer"
+            onClick={(e) => (window as any).gtag_report_conversion?.(e.currentTarget.href)}
             className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 text-white text-sm font-medium hover:opacity-95"
           >
             <MessageCircle size={14} /> WhatsApp
@@ -62,7 +63,10 @@ export function SiteHeader() {
               href={whatsappLink()}
               target="_blank"
               rel="noreferrer"
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                (window as any).gtag_report_conversion?.(e.currentTarget.href);
+                setOpen(false);
+              }}
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-4 py-2.5 text-white text-sm font-medium"
             >
               <MessageCircle size={14} /> WhatsApp

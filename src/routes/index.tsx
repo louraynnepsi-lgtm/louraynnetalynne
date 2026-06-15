@@ -67,7 +67,9 @@ function Home() {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = `Olá, Louraynne!%0A%0ANome: ${form.nome}%0AE-mail: ${form.email}%0A%0A${form.mensagem}`;
-    window.open(`https://wa.me/${SITE.whatsappNumber}?text=${text}`, "_blank");
+    const url = `https://wa.me/${SITE.whatsappNumber}?text=${text}`;
+    (window as any).gtag_report_conversion?.(url);
+    window.open(url, "_blank");
   };
 
   return (
@@ -104,6 +106,7 @@ function Home() {
                   href={whatsappLink()}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={(e) => (window as any).gtag_report_conversion?.(e.currentTarget.href)}
                   className="group inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 text-white font-medium shadow-lg shadow-emerald-900/10 transition-transform hover:scale-[1.02]"
                 >
                   <MessageCircle size={18} /> Agendar minha avaliação
@@ -309,6 +312,7 @@ function Home() {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noreferrer"
+                onClick={(e) => (window as any).gtag_report_conversion?.(e.currentTarget.href)}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium hover:opacity-95"
               >
                 <MessageCircle size={16} /> Agendar pelo WhatsApp
@@ -334,7 +338,7 @@ function Home() {
               <li className="flex items-center gap-3"><Video size={18} className="text-accent" /> Presencial e online</li>
               <li className="flex items-center gap-3">
                 <MessageCircle size={18} className="text-accent" />
-                <a href={whatsappLink()} target="_blank" rel="noreferrer" className="hover:text-primary">
+                <a href={whatsappLink()} target="_blank" rel="noreferrer" onClick={(e) => (window as any).gtag_report_conversion?.(e.currentTarget.href)} className="hover:text-primary">
                   {SITE.whatsappDisplay}
                 </a>
               </li>
@@ -344,6 +348,7 @@ function Home() {
               href={whatsappLink()}
               target="_blank"
               rel="noreferrer"
+              onClick={(e) => (window as any).gtag_report_conversion?.(e.currentTarget.href)}
               className="mt-10 inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium hover:opacity-95"
             >
               <MessageCircle size={18} /> Falar pelo WhatsApp
@@ -415,6 +420,7 @@ function Home() {
                 href={whatsappLink("Olá, Louraynne! Gostaria de agendar um atendimento no consultório.")}
                 target="_blank"
                 rel="noreferrer"
+                onClick={(e) => (window as any).gtag_report_conversion?.(e.currentTarget.href)}
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-white font-medium hover:opacity-95"
               >
                 <MessageCircle size={18} /> Agendar atendimento

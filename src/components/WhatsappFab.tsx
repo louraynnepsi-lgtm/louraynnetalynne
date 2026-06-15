@@ -6,12 +6,6 @@ export function WhatsappFab() {
       href={whatsappLink()}
       target="_blank"
       rel="noreferrer"
-      onClick={(e) => {
-        const w = window as unknown as { gtag_report_conversion?: (url: string) => boolean };
-        if (typeof w.gtag_report_conversion === "function") {
-          w.gtag_report_conversion((e.currentTarget as HTMLAnchorElement).href);
-        }
-      }}
       aria-label="Falar no WhatsApp"
       className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-white shadow-lg shadow-black/10 transition-transform hover:scale-105"
     >
